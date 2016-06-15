@@ -10,7 +10,7 @@ JOIN(
 	SELECT form_id, count(*) as c, count(distinct(ip)) as cip
 	FROM dwh.dim_responses r
 	
-	HAVING count(*)>2 AND count(distinct(ip))>2
+	HAVING count(*)>2 
 )
 ON form_id
 ;

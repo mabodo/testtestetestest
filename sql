@@ -9,7 +9,7 @@ AND f.created_at BETWEEN h.date_from and l.dt
 JOIN(
 	SELECT form_id, count(*) as c, count(distinct(ip)) as cip
 	FROM dwh.dim_responses r
-	GROUP BY form_id
+	
 	HAVING count(*)>2 AND count(distinct(ip))>2
 )
 ON form_id
